@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.students',
     'apps.instructors',
     'apps.courses',
+    'apps.reviews',
     'phonenumber_field',
 ]
 
