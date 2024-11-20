@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from core.validators import MinAgeValidator, BRCPFValidator
+from core.utils.validators import MinAgeValidator, BRCPFValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
 
