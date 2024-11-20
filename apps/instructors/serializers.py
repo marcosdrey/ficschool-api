@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from django.utils.translation import gettext_lazy as _
 from core.utils.serializer_validators import is_name_valid
-from .models import Student
+from .models import Instructor
 
 
-class StudentSerializer(serializers.ModelSerializer):
+class InstructorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
+        model = Instructor
         fields = '__all__'
 
     def validate_name(self, value):
