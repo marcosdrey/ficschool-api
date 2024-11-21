@@ -1,12 +1,9 @@
-from django.urls import path, include
+from django.urls import path
 from rest_framework.routers import DefaultRouter
 from . import views
 
 
-router = DefaultRouter()
-router.register('reviews', views.ReviewViewSet, 'reviews')
-
-
 urlpatterns = [
-    path('', include(router.urls))
+    path('courses/<uuid:course_id>/reviews/', views.CourseReviewViewSet.as_view({'get': 'list', 'post': 'create'}), name='courses-reviews'),
+    path('courses/<uuid:course_id>/reviews/<uuid:pk>/', views.CourseReviewViewSet.as_view({'get': 'retrieve', 'put': 'update', 'patch': 'partial_update', 'delete': 'destroy'}), name='courses-reviews'),
 ]

@@ -7,5 +7,6 @@ router = DefaultRouter()
 router.register('students', views.StudentViewSet, 'students')
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('courses/<uuid:course_id>/students/', views.StudentsByCourseListView.as_view({'get': 'list'}), name='courses-students'),
 ]

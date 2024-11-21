@@ -3,6 +3,8 @@ from .models import CourseReview
 from .serializers import CourseReviewSerializer
 
 
-class ReviewViewSet(ModelViewSet):
-    queryset = CourseReview.objects.all()
+class CourseReviewViewSet(ModelViewSet):
     serializer_class = CourseReviewSerializer
+
+    def get_queryset(self):
+        return CourseReview.objects.all()

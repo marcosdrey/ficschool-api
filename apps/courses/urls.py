@@ -10,5 +10,5 @@ router.register('modules', views.ModuleViewSet, 'modules')
 
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]
