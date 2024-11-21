@@ -24,7 +24,7 @@ class Course(models.Model):
     name = models.CharField(max_length=500)
     subject = models.ForeignKey(Subject, on_delete=models.PROTECT, related_name='courses')
     instructor = models.ForeignKey(Instructor, on_delete=models.PROTECT, related_name='courses')
-    students = models.ManyToManyField(Student, blank=True)
+    students = models.ManyToManyField(Student, blank=True, related_name='courses')
     workload = models.IntegerField(validators=[MinValueValidator(1)])
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
