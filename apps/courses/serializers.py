@@ -3,7 +3,6 @@ from rest_framework.reverse import reverse
 from .models import Subject, Course, Module
 from core.utils.shared_serializers import GenericModelSerializer
 from apps.instructors.models import Instructor
-from apps.students.models import Student
 
 
 class SubjectSerializer(serializers.ModelSerializer):
@@ -40,6 +39,7 @@ class CourseGETSerializer(serializers.ModelSerializer):
 
 class ModuleSerializer(serializers.ModelSerializer):
     course = GenericModelSerializer(model=Course)
+
     class Meta:
         model = Module
         fields = '__all__'

@@ -8,4 +8,8 @@ class InstructorViewSet(ModelViewSet):
     serializer_class = InstructorSerializer
 
     def get_serializer_class(self):
-        return SingleInstructorSerializer if self.action=='retrieve' else super().get_serializer_class()
+        return (
+            SingleInstructorSerializer if
+            self.action == 'retrieve' else
+            super().get_serializer_class()
+        )

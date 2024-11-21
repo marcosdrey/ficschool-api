@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from django.db.models import Model
-from django.apps import apps
-from apps.courses.models import Course, Subject
+
 
 '''
 General-purpose serializers

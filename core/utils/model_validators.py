@@ -22,7 +22,7 @@ class MinAgeValidator(BaseValidator):
     def __init__(self, limit_value):
         if not isinstance(limit_value, int):
             raise TypeError('Limit value must be an integer')
-        
+
         super().__init__(limit_value, message=self.message)
 
     def compare(self, date, limit_value):
