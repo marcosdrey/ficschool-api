@@ -7,4 +7,4 @@ class CourseReviewViewSet(ModelViewSet):
     serializer_class = CourseReviewSerializer
 
     def get_queryset(self):
-        return CourseReview.objects.all()
+        return CourseReview.objects.filter(course__id=self.kwargs['course_id'])
