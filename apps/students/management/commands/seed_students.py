@@ -22,7 +22,7 @@ class Command(BaseCommand):
             name = fake.first_name() + " " + fake.last_name()
             cpf = fake.cpf()
             phone_number = fake.cellphone_number()
-            email = ".".join(name.lower().split(" ")) + f"@gmail.com"
+            email = ".".join(name.lower().split(" ")) + "@gmail.com"
             birthday = fake.date_of_birth(minimum_age=12, maximum_age=90)
 
             student = Student(
