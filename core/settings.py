@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -164,5 +165,11 @@ SWAGGER_SETTINGS = {
             'name': 'Authorization',
             'description': 'Type the JWT token: Bearer (your_token)'
         },
+    }
+}
+
+UNFOLD = {
+    "SIDEBAR": {
+        "show_search": True,
     }
 }

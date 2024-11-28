@@ -1,16 +1,17 @@
 from django.contrib import admin
+from unfold.admin import ModelAdmin
 from .models import Subject, Course, Module
 
 
 @admin.register(Subject)
-class SubjectAdmin(admin.ModelAdmin):
+class SubjectAdmin(ModelAdmin):
     list_display = ('name', 'description', 'created_at', 'updated_at')
     list_display_links = ('name',)
     search_fields = ('name',)
 
 
 @admin.register(Course)
-class CourseAdmin(admin.ModelAdmin):
+class CourseAdmin(ModelAdmin):
     list_display = ('name', 'subject__name', 'instructor__name', 'workload', 'show_total_students')
     list_display_links = ('name',)
     search_fields = ('name', 'subject__name', 'instructor__name')
@@ -22,7 +23,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 
 @admin.register(Module)
-class ModuleAdmin(admin.ModelAdmin):
+class ModuleAdmin(ModelAdmin):
     list_display = ('name', 'course__name', 'order', 'created_at')
     list_display_links = ('name',)
     search_fields = ('name', 'course__name')
